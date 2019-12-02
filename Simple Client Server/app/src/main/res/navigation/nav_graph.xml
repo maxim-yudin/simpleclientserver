@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/usersListFragment">
+
+    <fragment
+        android:id="@+id/usersListFragment"
+        android:name="maximyudin.simpleclientserver.usersList.UsersListFragment"
+        android:label="@string/users_title"
+        tools:layout="@layout/fragment_users_list">
+        <action
+            android:id="@+id/action_showUserDetail"
+            app:destination="@id/userDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userDetailFragment"
+        android:name="maximyudin.simpleclientserver.userDetail.UserDetailFragment"
+        android:label="@string/user_detail_title"
+        tools:layout="@layout/fragment_user_detail">
+        <argument
+            android:name="selectedUser"
+            app:argType="maximyudin.simpleclientserver.network.User" />
+    </fragment>
+</navigation>

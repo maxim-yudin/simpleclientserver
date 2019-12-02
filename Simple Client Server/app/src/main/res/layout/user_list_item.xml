@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="maximyudin.simpleclientserver.network.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/padding_4"
+        android:paddingStart="@dimen/padding_8"
+        android:paddingLeft="@dimen/padding_8"
+        android:paddingTop="@dimen/padding_4"
+        android:paddingEnd="@dimen/margin_16"
+        android:paddingRight="@dimen/margin_16"
+        android:paddingBottom="@dimen/padding_4"
+        tools:context=".usersList.UsersListFragment">
+
+        <ImageView
+            android:id="@+id/photo"
+            android:layout_width="@dimen/photo_size"
+            android:layout_height="@dimen/photo_size"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{user.photoUrl}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/first_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginLeft="@dimen/margin_16"
+            android:text="@{user.firstName}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constraintBottom_toTopOf="@+id/last_name"
+            app:layout_constraintStart_toEndOf="@+id/photo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread"
+            tools:text="Имя" />
+
+        <TextView
+            android:id="@+id/last_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.lastName}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/first_name"
+            app:layout_constraintTop_toBottomOf="@+id/first_name"
+            tools:text="Фамилия" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

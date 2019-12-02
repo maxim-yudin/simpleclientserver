@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Пользователи</string>
+
+    <string name="users_title">Список пользователей</string>
+    <string name="user_detail_title">Карточка пользователя</string>
+</resources>
